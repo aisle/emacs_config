@@ -19,7 +19,7 @@
 ; (setq c-offsets-alist '((arglist-cont-nonempty . ++)
 ; 			(arglist-intro . ++)
 ; 			(arglist-close . ++)))
-;; (add-hook 'before-save-hook 'delete-trailing-whitespace) ; clean up the whitespaces in the end of line
+(add-hook 'before-save-hook 'delete-trailing-whitespace) ; clean up the whitespaces in the end of line
 (setq default-major-mode 'text-mode)
 (global-linum-mode 1) ; show line number
 (setq backup-directory-alist `(("." . "/home/admin/anhongyu1/.saves")))
@@ -73,3 +73,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Auto complete config
+(add-to-list 'load-path "~/.emacs.d/manual-packages/auto-complete-master")
+(add-to-list 'load-path "~/.emacs.d/manual-packages/popup-el-master")
+(add-to-list 'load-path "~/.emacs.d/manual-packages/fuzzy-el-master")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories
+             "~/.emacs.d/manual-packages/auto-complete-master/dict")
+(ac-config-default)
