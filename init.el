@@ -33,6 +33,13 @@
 (setq ido-use-filename-at-point 'guess)
 (setq ido-everywhere t)
 (ido-mode 1)
+
+;; enable recentf-mode
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(setq recentf-max-saved-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
 ;; No more typing the whole yes or no. Just y or n will do.
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; make the next line smooth
