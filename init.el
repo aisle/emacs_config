@@ -75,3 +75,7 @@
 (add-to-list 'ac-dictionary-directories
              "~/.emacs.d/manual-packages/auto-complete-master/dict")
 (ac-config-default)
+
+;; Enable protobuf-mode
+(add-to-list 'load-path "~/.emacs.d/manual-packages")
+(require 'protobuf-mode)
