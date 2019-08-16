@@ -10,6 +10,8 @@
 ;; Load monokai theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'monokai t)
+;; Disable menu bar
+(menu-bar-mode -1)
 
 ;;; Customize the behavior
 (setq-default c-basic-offset 4) ; set 4 spaces as indent
