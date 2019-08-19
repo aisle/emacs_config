@@ -86,3 +86,9 @@
 (add-to-list 'load-path "~/.emacs.d/manual-packages/highlight-parentheses.el-master")
 (require 'highlight-parentheses)
 (add-hook 'emacs-lisp-mode-hook 'highlight-parentheses-mode)
+
+;; Enable etags-select
+(load-file "~/.emacs.d/manual-packages/etags-select.el")
+;;binding the key
+(global-set-key "\M-?" 'etags-select-find-tag-at-point)
+(global-set-key "\M-." 'etags-select-find-tag)
