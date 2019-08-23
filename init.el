@@ -92,3 +92,7 @@
 ;;binding the key
 (global-set-key "\M-?" 'etags-select-find-tag-at-point)
 (global-set-key "\M-." 'etags-select-find-tag)
+
+;; Enable Undo tree mode
+(require 'undo-tree)
+(global-undo-tree-mode)
