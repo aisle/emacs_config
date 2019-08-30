@@ -15,3 +15,15 @@
 	(setq beg (region-beginning) end (region-end))
       (setq beg (line-beginning-position) end (line-end-position)))
     (comment-or-uncomment-region beg end)))
+
+(defun make-test ()
+  "Execute make test command or other customized test command"
+  (interactive)
+  ;; (switch-to-buffer-other-window "*compilation*")
+  (compile test-command))
+
+(defun make-clean ()
+  "Execute make clean command or other customized clean command"
+  (interactive)
+  (switch-to-buffer-other-window "*compilation*")
+  (compile test-command))

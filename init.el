@@ -12,6 +12,11 @@
 (load-theme 'monokai t)
 ;; Disable menu bar
 (menu-bar-mode -1)
+;; sr-speedbar
+(add-to-list 'load-path
+             "~/.emacs.d/manual-packages")
+(require 'sr-speedbar)
+(setq sr-speedbar-right-side nil)
 
 ;;; Customize the behavior
 (setq-default c-basic-offset 4) ; set 4 spaces as indent
@@ -27,7 +32,10 @@
 (global-linum-mode 1) ; show line number
 (setq backup-directory-alist `(("." . "/home/admin/anhongyu1/.saves")))
 (electric-pair-mode 1) ; auto complete brackets
-(setq compile-command "make -j 16") ; customize the default compile command
+(setq compile-command "make -j 8") ; customize the default compile command
+(setq clean-command "make clean") ; customize the default clean command
+(setq test-command "make test") ; customize the default test command
+
 ;; customize the c/c++ comment style
 (add-hook 'c-mode-hook (lambda () (setq comment-start "//"
 					comment-end   "")))
@@ -56,6 +64,15 @@
 ;; (global-set-key (kbd "RET") 'reindent-then-newline-and-indent) ; auto indent
 (global-set-key (kbd "M-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x C-b") 'buffer-menu) ; bind C-x C-b to buffer-menu, rather than list-buffers
+
+(global-set-key [f4] 'sr-speedbar-toggle)
+
+(global-set-key [f5] 'recompile)
+(global-set-key [f6] 'kill-compilation)
+(global-set-key [f7] 'make-clean)
+(global-set-key [f8] 'make-test)
+
+(global-set-key [f9] 'eval-buffer)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -87,6 +104,8 @@
 (add-to-list 'load-path "~/.emacs.d/manual-packages/highlight-parentheses.el-master")
 (require 'highlight-parentheses)
 (add-hook 'emacs-lisp-mode-hook 'highlight-parentheses-mode)
+;; Highlight matching brackets
+(show-paren-mode t)
 
 ;; Enable etags-select
 (load-file "~/.emacs.d/manual-packages/etags-select.el")
