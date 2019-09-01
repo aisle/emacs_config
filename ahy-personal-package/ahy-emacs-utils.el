@@ -19,11 +19,13 @@
 (defun make-test ()
   "Execute make test command or other customized test command"
   (interactive)
-  ;; (switch-to-buffer-other-window "*compilation*")
-  (compile test-command))
+  (let ((temp-compile-command compile-command))
+    (compile test-command)
+    (setq compile-command temp-compile-command)))
 
 (defun make-clean ()
   "Execute make clean command or other customized clean command"
   (interactive)
-  (switch-to-buffer-other-window "*compilation*")
-  (compile test-command))
+  (let ((temp-compile-command compile-command))
+    (compile clean-command)
+    (setq compile-command temp-compile-command)))
