@@ -65,7 +65,7 @@
 (global-set-key (kbd "M-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x C-b") 'buffer-menu) ; bind C-x C-b to buffer-menu, rather than list-buffers
 
-(global-set-key [f4] 'sr-speedbar-toggle)
+(global-set-key [f1] 'sr-speedbar-toggle)
 
 (global-set-key [f5] 'recompile)
 (global-set-key [f6] 'kill-compilation)
