@@ -64,6 +64,7 @@
 ;; (global-set-key (kbd "RET") 'reindent-then-newline-and-indent) ; auto indent
 (global-set-key (kbd "M-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x C-b") 'buffer-menu) ; bind C-x C-b to buffer-menu, rather than list-buffers
+(global-set-key (kbd "C-x j") 'ff-find-other-file)
 
 (global-set-key [f1] 'sr-speedbar-toggle)
 
