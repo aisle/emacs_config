@@ -31,3 +31,11 @@
   "Execute make clean command or other customized clean command"
   (interactive)
   (execute-compile-like-command clean-command))
+
+(defun use-google-coding-style ()
+  "Switch google c/c++ coding style"
+  (add-to-list 'load-path
+               "~/.emacs.d/coding-style")
+  (require 'google-c-style)
+  (add-hook 'c-mode-common-hook 'google-set-c-style)
+  (add-hook 'c-mode-common-hook 'google-make-newline-indent))
