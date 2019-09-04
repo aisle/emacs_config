@@ -16,16 +16,18 @@
       (setq beg (line-beginning-position) end (line-end-position)))
     (comment-or-uncomment-region beg end)))
 
+(defun execute-compile-like-command (command)
+  "Execute commands like *compile* or *recompile*"
+  (let ((temp-compile-command compile-command))
+    (compile command)
+    (setq compile-command temp-compile-command)))
+
 (defun make-test ()
   "Execute make test command or other customized test command"
   (interactive)
-  (let ((temp-compile-command compile-command))
-    (compile test-command)
-    (setq compile-command temp-compile-command)))
+  (execute-compile-like-command test-command))
 
 (defun make-clean ()
   "Execute make clean command or other customized clean command"
   (interactive)
-  (let ((temp-compile-command compile-command))
-    (compile clean-command)
-    (setq compile-command temp-compile-command)))
+  (execute-compile-like-command clean-command))
