@@ -49,7 +49,7 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 (setq recentf-max-saved-items 25)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 ;; No more typing the whole yes or no. Just y or n will do.
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -65,6 +65,9 @@
 (global-set-key (kbd "M-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x C-b") 'buffer-menu) ; bind C-x C-b to buffer-menu, rather than list-buffers
 (global-set-key (kbd "C-x j") 'ff-find-other-file)
+(global-set-key (kbd "C-c h") 'highlight-symbol)
+(global-set-key (kbd "C-c n") 'highlight-symbol-next)
+(global-set-key (kbd "C-c p") 'highlight-symbol-prev)
 
 (global-set-key [f1] 'sr-speedbar-toggle)
 
@@ -116,8 +119,8 @@
 ;; Enable etags-select
 (load-file "~/.emacs.d/manual-packages/etags-select.el")
 ;;binding the key
-(global-set-key "\M-?" 'etags-select-find-tag-at-point)
-(global-set-key "\M-." 'etags-select-find-tag)
+(global-set-key (kbd "M-?") 'etags-select-find-tag-at-point)
+(global-set-key (kbd "M-.") 'etags-select-find-tag)
 
 ;; Enable Undo tree mode
 (require 'undo-tree)
