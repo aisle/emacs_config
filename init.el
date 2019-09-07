@@ -101,6 +101,11 @@
 (add-to-list 'load-path "~/.emacs.d/manual-packages")
 (require 'protobuf-mode)
 
+;; Enable highlight-symbol
+(add-to-list 'load-path "~/.emacs.d/manual-packages")
+(require 'highlight-symbol)
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+
 ;; Enable highlight-parentheses-mode with elisp major mode
 (add-to-list 'load-path "~/.emacs.d/manual-packages/highlight-parentheses.el-master")
 (require 'highlight-parentheses)
