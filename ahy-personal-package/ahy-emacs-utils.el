@@ -39,3 +39,8 @@
   (require 'google-c-style)
   (add-hook 'c-mode-common-hook 'google-set-c-style)
   (add-hook 'c-mode-common-hook 'google-make-newline-indent))
+
+(defun find-usage (target-string)
+  "grep current dir to find a specified string"
+  (interactive "sTarget string: ")
+  (shell-command (format "grep -rnI \"%s\" ./ --exclude=TAGS" target-string)))
