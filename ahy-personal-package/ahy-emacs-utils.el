@@ -34,6 +34,7 @@
 
 (defun use-google-coding-style ()
   "Switch google c/c++ coding style"
+  (interactive)
   (add-to-list 'load-path
                "~/.emacs.d/coding-style")
   (require 'google-c-style)
