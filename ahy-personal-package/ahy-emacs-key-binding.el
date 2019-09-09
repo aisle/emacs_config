@@ -6,6 +6,7 @@
 (global-set-key (kbd "C-c h") 'highlight-symbol)
 (global-set-key (kbd "C-c n") 'highlight-symbol-next)
 (global-set-key (kbd "C-c p") 'highlight-symbol-prev)
+(global-set-key (kbd "C-c l") 'cpp-helper-log)
 
 (global-set-key (kbd "M-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "M-?") 'etags-select-find-tag-at-point)

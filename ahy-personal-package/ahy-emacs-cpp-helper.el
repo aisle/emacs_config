@@ -54,3 +54,9 @@
   "Help to print the c++11 style sleep clause"
   (interactive)
   (insert "std::this_thread::sleep_for(std::chrono::milliseconds(2000));"))
+
+(defun cpp-helper-log ()
+  "Help to print a log clause with special mark"
+  (interactive)
+  (insert "LOG(ERROR) << \"||= \";")
+  (backward-char 2))
