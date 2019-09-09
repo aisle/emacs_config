@@ -1,8 +1,7 @@
 (defun use-google-coding-style ()
   "Switch google c/c++ coding style"
   (interactive)
-  (add-to-list 'load-path
-               "~/.emacs.d/coding-style")
+  (add-to-list 'load-path (concat emacs-config-root "coding-style"))
   (require 'google-c-style)
   (add-hook 'c-mode-common-hook 'google-set-c-style)
   (add-hook 'c-mode-common-hook 'google-make-newline-indent))
