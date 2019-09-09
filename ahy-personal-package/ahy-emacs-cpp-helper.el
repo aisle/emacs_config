@@ -1,3 +1,4 @@
+;; Tags related stuff
 (defun generate-cpp-tags ()
   "Generate tag tables under current directory(Linux)."
   (interactive)
@@ -7,6 +8,12 @@
   "Generate tag tables under current directory(Linux)."
   (shell-command (format "find %s -type f -regextype posix-extended -regex \".*\.(c|h|cc|cpp|hpp)\" | xargs etags --append" path)))
 
+(defun find-usage (target-string)
+  "grep current dir to find a specified string"
+  (interactive "sTarget string: ")
+  (shell-command (format "grep -rnI \"%s\" ./ --exclude=TAGS" target-string)))
+
+;; Comments related stuff
 (defun comment-or-uncomment-region-or-line ()
   "Comments or uncomments the region or the current line if there's no active region."
   (interactive)
@@ -16,6 +23,10 @@
       (setq beg (line-beginning-position) end (line-end-position)))
     (comment-or-uncomment-region beg end)))
 
+(add-hook 'c-mode-hook (lambda () (setq comment-start "//"
+					comment-end   "")))
+
+;; Compilation related stuff
 (defun execute-compile-like-command (command)
   "Execute commands like *compile* or *recompile*"
   (let ((temp-compile-command compile-command))
@@ -32,16 +43,14 @@
   (interactive)
   (execute-compile-like-command clean-command))
 
-(defun use-google-coding-style ()
-  "Switch google c/c++ coding style"
-  (interactive)
-  (add-to-list 'load-path
-               "~/.emacs.d/coding-style")
-  (require 'google-c-style)
-  (add-hook 'c-mode-common-hook 'google-set-c-style)
-  (add-hook 'c-mode-common-hook 'google-make-newline-indent))
+(setq compile-command "make -j 8") ; customize the default compile command
+(setq clean-command "make clean") ; customize the default clean command
+(setq test-command "make test") ; customize the default test command
 
-(defun find-usage (target-string)
-  "grep current dir to find a specified string"
-  (interactive "sTarget string: ")
-  (shell-command (format "grep -rnI \"%s\" ./ --exclude=TAGS" target-string)))
+(setq compilation-scroll-output t) ; Compilation output
+
+;; Helper functions to quick typo
+(defun cpp-helper-sleep ()
+  "Help to print the c++11 style sleep clause"
+  (interactive)
+  (insert "std::this_thread::sleep_for(std::chrono::milliseconds(2000));"))
