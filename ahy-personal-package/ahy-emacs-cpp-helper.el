@@ -11,7 +11,7 @@
 (defun find-usage (target-string)
   "grep current dir to find a specified string"
   (interactive "sTarget string: ")
-  (shell-command (format "grep -rnI \"%s\" ./ --exclude=TAGS" target-string)))
+  (shell-command (format "grep -rnI \"%s\" ./ --exclude=TAGS --exclude=*.d" target-string)))
 
 ;; Comments related stuff
 (defun comment-or-uncomment-region-or-line ()
