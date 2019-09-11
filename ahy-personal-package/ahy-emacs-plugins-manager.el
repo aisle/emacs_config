@@ -41,3 +41,9 @@
 ;; Load monokai theme
 (add-to-list 'custom-theme-load-path (concat emacs-config-root "themes/"))
 (load-theme 'monokai t)
+
+;; Customize dired mode
+(put 'dired-find-alternate-file 'disabled nil)
+(require 'dired )
+(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
+(define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))

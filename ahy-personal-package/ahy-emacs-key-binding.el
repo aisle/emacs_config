@@ -12,7 +12,7 @@
 (global-set-key (kbd "M-?") 'etags-select-find-tag-at-point)
 (global-set-key (kbd "M-.") 'etags-select-find-tag)
 
-(global-set-key [f1] 'sr-speedbar-toggle)
+(global-set-key [f1] '(lambda () (interactive) (dired default-directory)))
 
 (global-set-key [f5] 'recompile)
 (global-set-key [f6] 'kill-compilation)
