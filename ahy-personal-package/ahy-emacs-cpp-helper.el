@@ -6,12 +6,16 @@
 
 (defun generate-cpp-tags-under-dir-append (path)
   "Generate tag tables under current directory(Linux)."
-  (shell-command (format "find %s -type f -regextype posix-extended -regex \".*\.(c|h|cc|cpp|hpp)\" | xargs etags --append" path)))
+  (shell-command
+   (format "find %s -type f -regextype posix-extended -regex \".*\.(c|h|cc|cpp|hpp)\" | xargs etags --append" path)))
 
-(defun find-usage (target-string)
+(defun find-usage (target-directory target-string)
   "grep current dir to find a specified string"
-  (interactive "sTarget string: ")
-  (shell-command (format "grep -rnI \"%s\" ./ --exclude=TAGS --exclude=*.d" target-string)))
+  (interactive "DTarget directory: \nsTarget string: ")
+  (message target-directory)
+  (shell-command (format "grep -rnI \"%s\" \"%s\" --exclude=TAGS --exclude=*.d"
+                         target-string
+                         target-directory)))
 
 ;; Comments related stuff
 (defun comment-or-uncomment-region-or-line ()
