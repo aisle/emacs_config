@@ -28,8 +28,3 @@
 ;; make the next line smooth
 (setq scroll-step 1)
 (setq scroll-conservatively 10000)
-
-;; highlight the columns exceeds 120
-(setq-default whitespace-line-column 120
-              whitespace-style '(face lines-tail))
-(add-hook 'prog-mode-hook #'whitespace-mode)
