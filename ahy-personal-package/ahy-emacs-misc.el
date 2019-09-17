@@ -1,7 +1,7 @@
 ;;; Customize the appearance
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
-(setq default-fill-column 80)
+(setq default-fill-column 120)
 (menu-bar-mode -1)
 (global-linum-mode 1) ; show line number
 

@@ -47,3 +47,9 @@
 (require 'dired )
 (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
 (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))
+
+;; Enable fci mode
+(require 'fill-column-indicator)
+(setq fci-rule-width 1)
+(setq fci-rule-color "red")
+(add-hook 'prog-mode-hook 'fci-mode)
