@@ -22,3 +22,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Features in testing
+(setq backward-delete-char-untabify-method 'hungry)
+(setq-default electric-indent-inhibit t)
