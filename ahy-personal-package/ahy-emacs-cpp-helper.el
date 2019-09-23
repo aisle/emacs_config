@@ -9,13 +9,16 @@
   (shell-command
    (format "find %s -type f -regextype posix-extended -regex \".*\.(c|h|cc|cpp|hpp)\" | xargs etags --append" path)))
 
+(eval-after-load "grep"
+  '(grep-compute-defaults))
 (defun find-usage (target-directory target-string)
   "grep current dir to find a specified string"
   (interactive "DTarget directory: \nsTarget string: ")
   (message target-directory)
-  (shell-command (format "grep -rnI \"%s\" \"%s\" --exclude=TAGS --exclude=*.d"
-                         target-string
-                         target-directory)))
+  (message target-string)
+  (rgrep target-string
+         (cdr (assoc "cchh" grep-files-aliases))
+         target-directory nil))
 
 ;; Comments related stuff
 (defun comment-or-uncomment-region-or-line ()
