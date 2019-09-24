@@ -18,7 +18,8 @@
   (message target-string)
   (rgrep target-string
          (cdr (assoc "cchh" grep-files-aliases))
-         target-directory nil))
+         target-directory nil)
+  (select-window (get-buffer-window "*grep*")))
 
 ;; Comments related stuff
 (defun comment-or-uncomment-region-or-line ()
