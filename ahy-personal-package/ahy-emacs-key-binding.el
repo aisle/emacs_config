@@ -9,9 +9,6 @@
 (global-set-key (kbd "C-c p")   'highlight-symbol-prev)
 (global-set-key (kbd "C-c l")   'cpp-helper-log)
 
-(global-set-key (kbd "<C-left>")  'shift-left-current-line)
-(global-set-key (kbd "<C-right>") 'shift-right-current-line)
-
 (global-set-key (kbd "M-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "M-?") 'etags-select-find-tag-at-point)
 (global-set-key (kbd "M-.") 'etags-select-find-tag)
@@ -20,7 +17,9 @@
 
 (global-set-key [f5] 'recompile)
 (global-set-key [f6] 'kill-compilation)
-(global-set-key [f7] 'make-clean)
-(global-set-key [f8] 'make-test)
+;; (global-set-key [f7] 'make-clean)
+;; (global-set-key [f8] 'make-test)
 
-(global-set-key [f9] 'eval-buffer)
+(global-set-key [f9]  'eval-buffer)
+(global-set-key [f11] 'shift-left-current-line-or-region)
+(global-set-key [f12] 'shift-right-current-line-or-region)

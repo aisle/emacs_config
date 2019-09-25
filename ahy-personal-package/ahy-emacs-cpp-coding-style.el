@@ -17,19 +17,23 @@
                         (arglist-intro . ++)))
 (add-hook 'before-save-hook 'delete-trailing-whitespace) ; clean up the whitespaces in the end of line
 
-(defun shift-right-current-line ()
-  "Shift right current line, by basic offset"
-  (interactive)
-  (let ((start (point-at-bol))
-        (end (point-at-eol)))
-    (indent-rigidly start end c-basic-offset)))
+(defun indent-rigidly-n (n)
+  "Indent the region, or otherwise the current line, by N spaces."
+  (let* ((use-region (and transient-mark-mode mark-active))
+         (rstart (if use-region (region-beginning) (point-at-bol)))
+         (rend   (if use-region (region-end)       (point-at-eol)))
+         (deactivate-mark "irrelevant")) ; avoid deactivating mark
+    (indent-rigidly rstart rend n)))
 
-(defun shift-left-current-line ()
-  "Shift left current line, by basic offset"
+(defun shift-right-current-line-or-region ()
+  "Shift right current line or region, by basic offset"
   (interactive)
-  (let ((start (point-at-bol))
-        (end (point-at-eol)))
-    (indent-rigidly start end (- c-basic-offset))))
+  (indent-rigidly-n c-basic-offset))
+
+(defun shift-left-current-line-or-region ()
+  "Shift left current line or region, by basic offset"
+  (interactive)
+  (indent-rigidly-n (- c-basic-offset)))
 
 (defadvice c-lineup-arglist (around my activate)
   "Improve indentation of continued C++11 lambda function opened as argument."
