@@ -21,5 +21,6 @@
 ;; (global-set-key [f8] 'make-test)
 
 (global-set-key [f9]  'eval-buffer)
+(global-set-key [f10] 'shift-left-current-line-or-region-to-beginning)
 (global-set-key [f11] 'shift-left-current-line-or-region)
 (global-set-key [f12] 'shift-right-current-line-or-region)

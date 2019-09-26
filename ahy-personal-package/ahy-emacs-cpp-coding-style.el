@@ -35,6 +35,11 @@
   (interactive)
   (indent-rigidly-n (- c-basic-offset)))
 
+(defun shift-left-current-line-or-region-to-beginning ()
+  "Shift left current line or region, to the beginning"
+  (interactive)
+  (indent-rigidly-n -120))
+
 (defadvice c-lineup-arglist (around my activate)
   "Improve indentation of continued C++11 lambda function opened as argument."
   (setq ad-return-value
