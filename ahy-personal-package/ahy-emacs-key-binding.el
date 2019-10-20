@@ -14,6 +14,11 @@
 (global-set-key (kbd "M-?") 'etags-select-find-tag-at-point)
 (global-set-key (kbd "M-.") 'etags-select-find-tag)
 
+(global-set-key (kbd "C-c <up>")    'buf-move-up)
+(global-set-key (kbd "C-c <down>")  'buf-move-down)
+(global-set-key (kbd "C-c <left>")  'buf-move-left)
+(global-set-key (kbd "C-c <right>") 'buf-move-right)
+
 (global-set-key [f1] '(lambda () (interactive) (dired default-directory)))
 
 (global-set-key [f5] 'recompile)

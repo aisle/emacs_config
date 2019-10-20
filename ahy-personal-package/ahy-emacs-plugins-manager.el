@@ -38,6 +38,9 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+;; Enable buffer-move
+(require 'buffer-move)
+
 ;; sr-speedbar
 (require 'sr-speedbar)
 (setq sr-speedbar-right-side nil)
