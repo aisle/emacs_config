@@ -16,6 +16,10 @@
              (concat emacs-config-root "manual-packages/auto-complete-master/dict"))
 (ac-config-default)
 
+;; Bazel
+(require 'bazel-mode)
+(require 'bazel-build)
+
 ;; Enable unbound plugin, to check available key combinations
 ;; Usage: M-x describe-unbound-keys
 (require 'unbound)
