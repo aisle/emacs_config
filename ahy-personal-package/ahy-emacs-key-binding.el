@@ -24,7 +24,7 @@
 (global-set-key [f5] 'recompile)
 (global-set-key [f6] 'kill-compilation)
 (global-set-key [f7] 'whitespace-mode)
-;; (global-set-key [f8] 'make-test)
+(global-set-key [f8] 'make-test)
 
 (global-set-key [f9]  'eval-buffer)
 (global-set-key [f10] 'shift-left-current-line-or-region-to-beginning)
