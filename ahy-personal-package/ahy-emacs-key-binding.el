@@ -3,6 +3,7 @@
 (global-set-key (kbd "C-x C-b") 'buffer-menu) ; bind C-x C-b to buffer-menu, rather than list-buffers
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 (global-set-key (kbd "C-x j")   'ff-get-other-file)
+(global-set-key (kbd "C-c C-c") 'eval-buffer)
 (global-set-key (kbd "C-c f")   'find-name-dired)
 (global-set-key (kbd "C-c g")   'find-usage)
 (global-set-key (kbd "C-c h")   'highlight-symbol)
