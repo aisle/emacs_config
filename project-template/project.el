@@ -1,6 +1,6 @@
 ;; Usage:
 ;; Step1: Replace "P-R-O-J-E-C-T" with the specified name
-;; Step2: Secify root path
+;; Step2: Specify root path
 ;; Step3: Specify src dirs needs to generate tags
 ;; Step4: Specify compile, test & clean commands
 
