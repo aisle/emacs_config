@@ -9,6 +9,8 @@
              (concat emacs-config-root "manual-packages/highlight-parentheses.el-master"))
 (add-to-list 'load-path
              (concat emacs-config-root "manual-packages/popup-el-master"))
+(add-to-list 'load-path
+             (concat emacs-config-root "manual-packages/iedit"))
 
 ;; Auto complete config
 (require 'auto-complete-config)
@@ -58,6 +60,9 @@
 (require 'dired )
 (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
 (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))
+
+;; iedit
+(require 'iedit)
 
 ;; Enable fci mode
 (require 'fill-column-indicator)

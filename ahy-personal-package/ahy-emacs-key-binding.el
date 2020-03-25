@@ -14,6 +14,7 @@
 (global-set-key (kbd "M-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "M-?") 'etags-select-find-tag-at-point)
 (global-set-key (kbd "M-.") 'etags-select-find-tag)
+(global-set-key (kbd "M-,") 'iedit-mode)
 
 (global-set-key (kbd "C-c <up>")    'buf-move-up)
 (global-set-key (kbd "C-c <down>")  'buf-move-down)
