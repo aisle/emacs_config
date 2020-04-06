@@ -9,6 +9,9 @@
 (setq-default c-basic-offset 4) ; set 4 spaces as indent
 (setq-default indent-tabs-mode nil) ; disable tabs
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode)) ; enter c++ mode for .h file
+(add-to-list 'auto-mode-alist '("BUILD" . bazel-mode))
+(add-to-list 'auto-mode-alist '("WORKSPACE" . bazel-mode))
+
 ; indent 2 times of basic offset in arglist
 ;; (setq c-offsets-alist '((arglist-cont-nonempty . ++)
 ;;                         (arglist-intro . ++)
